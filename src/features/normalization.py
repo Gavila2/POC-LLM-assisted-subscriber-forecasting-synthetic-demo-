@@ -43,6 +43,10 @@ class DataNormalizer:
         numeric_cols = df_normalized.select_dtypes(include=[np.number]).columns
         self.feature_columns = [col for col in numeric_cols if col not in exclude_cols]
         
+        # Convert feature columns to float to avoid type issues
+        for col in self.feature_columns:
+            df_normalized[col] = df_normalized[col].astype(float)
+        
         print(f"Normalizing {len(self.feature_columns)} features by market...")
         
         # Normalize each market separately

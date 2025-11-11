@@ -36,7 +36,7 @@ class SyntheticDataGenerator:
         np.random.seed(seed)
         
         # Generate hourly timestamps
-        date_range = pd.date_range(start=self.start_date, end=self.end_date, freq='H')
+        date_range = pd.date_range(start=self.start_date, end=self.end_date, freq='h')
         
         data = []
         for market in self.markets:
@@ -87,7 +87,7 @@ class SyntheticDataGenerator:
         np.random.seed(seed)
         
         # Generate hourly timestamps
-        date_range = pd.date_range(start=self.start_date, end=self.end_date, freq='H')
+        date_range = pd.date_range(start=self.start_date, end=self.end_date, freq='h')
         
         data = []
         for market in self.markets:
@@ -143,7 +143,7 @@ class SyntheticDataGenerator:
         """
         np.random.seed(seed)
         
-        date_range = pd.date_range(start=self.start_date, end=self.end_date, freq='H')
+        date_range = pd.date_range(start=self.start_date, end=self.end_date, freq='h')
         
         data = []
         for market in self.markets:

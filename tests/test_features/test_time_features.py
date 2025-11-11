@@ -13,7 +13,7 @@ class TestTimeFeatureEngineer:
     @pytest.fixture
     def sample_data(self):
         """Create sample data for testing."""
-        dates = pd.date_range('2023-01-01', '2023-01-07', freq='H')
+        dates = pd.date_range('2023-01-01', '2023-01-07', freq='h')
         df = pd.DataFrame({
             'timestamp': dates,
             'market': ['NYC'] * len(dates),

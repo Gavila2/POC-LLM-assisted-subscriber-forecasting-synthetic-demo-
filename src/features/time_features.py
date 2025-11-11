@@ -169,10 +169,10 @@ class TimeFeatureEngineer:
                     .shift(lag)
                 )
         
-        # Fill NaN values from lagging with forward fill
+        # Fill NaN values from lagging with backward fill
         lag_cols = [col for col in df_features.columns if '_lag_' in col]
         for col in lag_cols:
-            df_features[col] = df_features.groupby('market')[col].fillna(method='bfill')
+            df_features[col] = df_features.groupby('market')[col].bfill()
         
         return df_features
     
